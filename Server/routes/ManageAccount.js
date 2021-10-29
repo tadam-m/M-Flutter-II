@@ -6,7 +6,6 @@ var Response = require('../bin/response.js').Response;
 router.post('/login', function (req, res, next)
 {
     let response = login(req);
-    res.status = response.status;
     res.status(response.status).json(response.body);
 });
 
