@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var users = new Map();
-var Response = require('../bin/response.js').Response;
+var Response = require('../object/response.js').Response;
 
 router.post('/login', function (req, res, next)
 {
