@@ -5,12 +5,15 @@ var Response = require('../bin/response.js').Response;
 
 router.post('/login', function (req, res, next)
 {
-    res.json(login(req));
+    let response = login(req);
+    res.status = response.status;
+    res.status(response.status).json(response.body);
 });
 
 router.post('/register', function (req, res, next)
 {
-    res.json(register(req));
+    let response = register(req);
+    res.status(response.status).json(response.body);
 });
 
 function register(req)
