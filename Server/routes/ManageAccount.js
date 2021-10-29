@@ -20,15 +20,14 @@ function register(req)
 {
     var username = req.body.username;
     var password = req.body.password;
+
     if (username == undefined || password == undefined)
         return new Response(403, "username or password is empty");
     if (users.get(username) != undefined)
         return new Response(401, "This user already exist");
     else
-    {
         users.set(username, password);
-        return new Response(200, "User " + username + " well created");
-    }
+    return new Response(200, "User " + username + " well created");
 }
 
 function login(req)
