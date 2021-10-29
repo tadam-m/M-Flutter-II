@@ -1,5 +1,9 @@
+var express = require('express');
+var router = express.Router();
+
 router.get('/getList', function (req, res, next)
 {
-    
-    res.status(response.status).json(response.body);
+    res.status(200).json(global.ClubList);
 });
+
+module.exports = router;
