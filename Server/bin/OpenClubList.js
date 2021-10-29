@@ -1,5 +1,4 @@
 const fs = require("fs");
-var Club = require('../object/Club').Club;
 
 function ReadClubFile()
 {
