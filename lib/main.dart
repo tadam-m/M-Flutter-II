@@ -31,7 +31,7 @@ class Routing extends StatelessWidget {
         ),
         GetPage<RegisterScreen>(
           name: registerRoute,
-          page: () => RegisterScreen(),
+          page: () => const RegisterScreen(),
         ),
         // GetPage<LoginScreen>(
         //   name: loginRoute,
