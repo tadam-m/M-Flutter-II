@@ -11,7 +11,7 @@ class ApiManager
 
   static Future<User> loginUser(String username, String password) async {
     final response = await http.post(
-      Uri.parse(baseUrl + '/login'),
+      Uri.parse(baseUrl + '/users/login'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -30,7 +30,7 @@ class ApiManager
 
   static Future<User> registerUser(String username, String password) async {
     final response = await http.post(
-      Uri.parse(baseUrl + '/register'),
+      Uri.parse(baseUrl + '/users/register'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },

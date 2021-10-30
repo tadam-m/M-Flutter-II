@@ -52,15 +52,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     child: IntrinsicHeight(
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Expanded(
                             flex: 2,
                             child: Container(
                               alignment: Alignment.center,
-                              child: const Text(
-                                'Welcome\non\nTechno Clubs Berlin',
+                              child:
+                              const Text(
+                                'Already an Account ?',
                                 textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 40.0),
+                                style: TextStyle(fontSize: 35.0),
                               ),
                             ),
                           ),

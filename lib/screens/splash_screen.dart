@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _playAudio() async {
     await audioPlayer.play(
-      'https://zedge-ringtones.com/ringtones/f674c7deb01b7b02045328a85d03783b.mp3',
+      'https://zedge-ringtones.com/ringtones/43c6ef2253e993fa747cc0f64560dfd1.mp3',
     );
     await Future<void>.delayed(const Duration(seconds: 3));
     Get.offAllNamed(loginRoute);
@@ -36,16 +36,20 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const <Widget>[
+              Padding(
+                padding: EdgeInsets.only(top: 30.0),
+                child: Image(image: AssetImage('assets/icon-app.jpg')),
+              ),
               SizedBox(
                 child: Text(
-                  'Welcome\non\nTechno Clubs Berlin',
+                  'Welcome\non\nGehen Sie zum Club',
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 40.0),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10.0),
+                padding: EdgeInsets.only(top: 50.0),
                 child: CircularProgressIndicator(value: null),
               ),
             ],

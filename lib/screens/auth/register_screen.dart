@@ -66,9 +66,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           child: Container(
                             alignment: Alignment.center,
                             child: const Text(
-                              'Welcome\non\nTechno Clubs Berlin',
+                              'Register\nto\nGehen Sie zum Club',
                               textAlign: TextAlign.center,
-                              style: TextStyle(fontSize: 40.0),
+                              style: TextStyle(fontSize: 35.0),
                             ),
                           ),
                         ),
