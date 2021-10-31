@@ -8,9 +8,10 @@ import 'package:techno_clubs_berlin/API/custom_exception.dart';
 class ApiManager
 {
   static String baseUrl = 'https://gehensiezumclub.herokuapp.com/api/gehenSiezumClub';
+  http.Client client = http.Client();
 
-  static Future<User> loginUser(String username, String password) async {
-    final response = await http.post(
+  Future<User> loginUser(String username, String password) async {
+    final response = await client.post(
       Uri.parse(baseUrl + '/users/login'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
@@ -28,8 +29,8 @@ class ApiManager
     }
   }
 
-  static Future<User> registerUser(String username, String password) async {
-    final response = await http.post(
+  Future<User> registerUser(String username, String password) async {
+    final response = await client.post(
       Uri.parse(baseUrl + '/users/register'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',

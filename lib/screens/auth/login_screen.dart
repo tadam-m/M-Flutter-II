@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
       Get.snackbar('Error', 'Please verify your informations');
       return;
     }
-    await ApiManager.loginUser(_emailController.text, _passwordController.text)
+    await ApiManager().loginUser(_emailController.text, _passwordController.text)
         .then((value) => {
               Get.snackbar('Login Success', 'logged in as ' + value.name),
               setState(() {
@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         children: <Widget>[
                           Expanded(
                             flex: 2,
-                            child: Container(
+                             child: Container(
                               alignment: Alignment.center,
                               child:
                               const Text(
