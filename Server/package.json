@@ -4,7 +4,8 @@
   "description": "server part of flutter-II module",
   "scripts": {
     "start": "node ./bin/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretty": "prettier --write '**/*.js'"
   },
   "author": "izetrom",
   "license": "ISC",
@@ -13,5 +14,8 @@
     "express": "^4.17.1",
     "morgan": "^1.10.0",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "prettier": "^2.4.1"
   }
 }
