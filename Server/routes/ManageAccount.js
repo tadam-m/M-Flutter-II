@@ -31,8 +31,8 @@ function register(req)
 
 function login(req)
 {
-    var username = users.get(req.body.username);
-    var password = users.get(req.body.password);
+    var username = req.body.username;
+    var password = req.body.password;
 
     if (username == undefined || password == undefined)
         return new Response(403, "username or password is empty");
