@@ -22,7 +22,8 @@ class _LoginScreenState extends State<LoginScreen> {
       Get.snackbar('Error', 'Please verify your informations');
       return;
     }
-    await ApiManager().loginUser(_emailController.text, _passwordController.text)
+    await ApiManager()
+        .loginUser(_emailController.text, _passwordController.text)
         .then((value) => {
               Get.snackbar('Login Success', 'logged in as ' + value.name),
               setState(() {
@@ -56,10 +57,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         children: <Widget>[
                           Expanded(
                             flex: 2,
-                             child: Container(
+                            child: Container(
                               alignment: Alignment.center,
-                              child:
-                              const Text(
+                              child: const Text(
                                 'Already an Account ?',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(fontSize: 35.0),
@@ -82,6 +82,10 @@ class _LoginScreenState extends State<LoginScreen> {
                               alignment: Alignment.center,
                               child: Column(
                                 children: <Widget>[
+                                  ElevatedButton(
+                                    onPressed: () => Get.toNamed(vueListClub),
+                                    child: const Text('Bypass login'),
+                                  ),
                                   ElevatedButton(
                                     onPressed: signIn,
                                     child: const Text('Login'),
