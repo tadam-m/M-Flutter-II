@@ -3,8 +3,9 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'package:techno_clubs_berlin/API/api_manager.dart';
+import 'package:http/http.dart' as http;
 
+import 'package:techno_clubs_berlin/API/api_manager.dart';
 import 'package:techno_clubs_berlin/components/auth/register_form.dart';
 import 'package:techno_clubs_berlin/constants/routes.dart';
 
@@ -19,6 +20,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final ApiManager _apiProvider = ApiManager(client: http.Client());
   bool _isLoading = false;
 
   Future<void> register() async {
@@ -28,7 +30,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       Get.snackbar('Error', 'All information are mandatory');
       return;
     }
-    await ApiManager().registerUser(_emailController.text, _passwordController.text)
+    await _apiProvider.registerUser(_emailController.text, _passwordController.text)
         .then((value) => {
               Get.snackbar('Register Success', 'Register as : ' + value.name),
               setState(() {

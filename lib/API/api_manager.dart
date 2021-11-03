@@ -4,11 +4,12 @@ import 'dart:convert';
 import 'package:techno_clubs_berlin/models/user.dart';
 import 'package:techno_clubs_berlin/API/custom_exception.dart';
 
-
 class ApiManager
 {
   static String baseUrl = 'https://gehensiezumclub.herokuapp.com/api/gehenSiezumClub';
-  http.Client client = http.Client();
+  //http.Client client = http.Client();
+  final http.Client client;
+  ApiManager({required this.client});
 
   Future<User> loginUser(String username, String password) async {
     final response = await client.post(

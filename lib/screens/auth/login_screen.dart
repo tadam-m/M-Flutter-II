@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:techno_clubs_berlin/API/api_manager.dart';
+import 'package:http/http.dart' as http;
 
+import 'package:techno_clubs_berlin/API/api_manager.dart';
 import 'package:techno_clubs_berlin/components/auth/login_form.dart';
 import 'package:techno_clubs_berlin/constants/routes.dart';
 
@@ -15,6 +16,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final ApiManager _apiProvider = ApiManager(client: http.Client());
+
   bool _isLoading = false;
 
   signIn() async {
@@ -22,7 +25,8 @@ class _LoginScreenState extends State<LoginScreen> {
       Get.snackbar('Error', 'Please verify your informations');
       return;
     }
-    await ApiManager().loginUser(_emailController.text, _passwordController.text)
+    await _apiProvider
+        .loginUser(_emailController.text, _passwordController.text)
         .then((value) => {
               Get.snackbar('Login Success', 'logged in as ' + value.name),
               setState(() {
@@ -33,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
               setState(() {
                 _isLoading = false;
               }),
-              Get.snackbar('Login failed', error.toString()),
+      Get.snackbar('Login failed', error.toString()),
             });
   }
 
@@ -83,6 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: Column(
                                 children: <Widget>[
                                   ElevatedButton(
+                                    key: const Key('login'),
                                     onPressed: signIn,
                                     child: const Text('Login'),
                                   ),
