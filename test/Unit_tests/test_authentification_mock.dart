@@ -11,7 +11,7 @@ import 'package:techno_clubs_berlin/models/user.dart';
 import 'test_authentication_mock.mocks.dart';
 
 @GenerateMocks([http.Client])
-main() {
+void authUnitTest() {
   const baseUrl = 'https://gehensiezumclub.herokuapp.com/api/gehenSiezumClub';
 
   group('Test Authentication Request', () {
@@ -29,7 +29,7 @@ main() {
           body: jsonEncode(
               <String, String>{'username': "tadam", 'password': "tadam"}),
         )).thenAnswer((_) async => http.Response(
-            File('test/test_ressources/random_user.json').readAsStringSync(),
+            File('test/test_resources/random_user.json').readAsStringSync(),
             200));
 
         final api = ApiManager(client: client);
@@ -128,7 +128,7 @@ main() {
               body: jsonEncode(
                   <String, String>{'username': name, 'password': pass}),
             )).thenAnswer((_) async => http.Response(
-                File('test/test_ressources/random_user.json').readAsStringSync(),
+                File('test/test_resources/random_user.json').readAsStringSync(),
                 200));
 
             final api = ApiManager(client: client);

@@ -20,7 +20,7 @@ class LoginForm extends StatelessWidget {
             TextField(
               key: const Key('email'),
               controller: emailController,
-              decoration: const InputDecoration(labelText: 'Email'),
+              decoration: const InputDecoration(labelText: 'Username'),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 10.0),

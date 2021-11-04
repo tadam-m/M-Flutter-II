@@ -21,6 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _isLoading = false;
 
   signIn() async {
+    setState(() {_isLoading = true;});
     if (_emailController.text.isEmpty || _passwordController.text.isEmpty) {
       Get.snackbar('Error', 'Please verify your informations');
       return;

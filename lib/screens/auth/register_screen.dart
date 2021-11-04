@@ -24,13 +24,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _isLoading = false;
 
   Future<void> register() async {
+    setState(() {_isLoading = true;});
     if (_usernameController.text.isEmpty ||
         _emailController.text.isEmpty ||
         _passwordController.text.isEmpty) {
       Get.snackbar('Error', 'All information are mandatory');
       return;
     }
-    await _apiProvider.registerUser(_emailController.text, _passwordController.text)
+    await _apiProvider.registerUser(_usernameController.text, _passwordController.text)
         .then((value) => {
               Get.snackbar('Register Success', 'Register as : ' + value.name),
               setState(() {
@@ -92,8 +93,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             child: Column(
                               children: <Widget>[
                                 ElevatedButton(
+                                  key: const Key('register'),
                                   onPressed: register,
-//                                onPressed: register,
                                   child: const Text('Register'),
                                 ),
                                 ElevatedButton(
