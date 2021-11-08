@@ -28,21 +28,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
       Get.snackbar('Error', 'All information are mandatory');
       return;
     }
-    await ApiManager().registerUser(_emailController.text, _passwordController.text)
-        .then((value) => {
-              Get.snackbar('Register Success', 'Register as : ' + value.name),
-              setState(() {
-                _isLoading = false;
-              }),
-            })
-        .onError((error, stackTrace) => {
-              log(error.toString()),
-              setState(() {
-                _isLoading = false;
-              }),
-              Get.snackbar('Register failed', error.toString()),
-            });
-   /* Get.offAllNamed(homeRoute);*/
+    await ApiManager()
+        .registerUser(_emailController.text, _passwordController.text)
+        .then((value) {
+      Get.snackbar('Register Success', 'Register as : ' + value.name);
+      setState(() {
+        _isLoading = false;
+      });
+    }).onError((error, stackTrace) {
+      log(error.toString());
+      setState(() {
+        _isLoading = false;
+      });
+      Get.snackbar('Register failed', error.toString());
+    });
+    /* Get.offAllNamed(homeRoute);*/
   }
 
   @override
@@ -91,7 +91,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               children: <Widget>[
                                 ElevatedButton(
                                   onPressed: register,
-//                                onPressed: register,
                                   child: const Text('Register'),
                                 ),
                                 ElevatedButton(
