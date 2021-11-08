@@ -4,7 +4,7 @@ import 'package:techno_clubs_berlin/components/display_entrance.dart';
 import 'package:techno_clubs_berlin/components/display_rating.dart';
 
 import 'package:techno_clubs_berlin/models/club.dart';
-import 'package:techno_clubs_berlin/screens/auth/vue_club_screen.dart';
+import 'package:techno_clubs_berlin/screens/vue_club_screen.dart';
 
 class ClubCard extends StatelessWidget {
   final Club club;

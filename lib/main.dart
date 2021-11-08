@@ -6,7 +6,7 @@ import 'package:techno_clubs_berlin/themes/themes.dart';
 import 'package:techno_clubs_berlin/screens/splash_screen.dart';
 import 'package:techno_clubs_berlin/screens/auth/login_screen.dart';
 import 'constants/routes.dart';
-import 'screens/auth/vue_club_list_screen.dart';
+import 'screens/vue_club_list_screen.dart';
 
 void main() {
   runApp(const Routing());
