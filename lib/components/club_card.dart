@@ -20,7 +20,7 @@ class ClubCard extends StatelessWidget {
         child: InkWell(
           splashColor: Colors.green,
           onTap: () => Get.to(
-            const VueClubScreen(),
+            () => const VueClubScreen(),
             arguments: {"club": club},
           ),
           child: Column(
