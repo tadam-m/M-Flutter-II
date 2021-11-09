@@ -4,12 +4,34 @@ var router = express.Router();
 router.post('/PostReview', function (req, res, next)
 {
     try {
-    let response = PostReview(req);
-    res.status(response.status).json(response.body);
+        let response = PostReview(req);
+        res.status(response.status).json(response.body);
     } catch (error) {
         return {status: 500, body: {message: {message : "Internal error"}}};
     }
 });
+
+router.get('/GetReview', function (req, res, next)
+{
+    try {
+        let response = GetReview(req);
+        res.status(response.status).json(response.body);
+    } catch (error) {
+        return {status: 500, body: {message: {message : "Internal error"}}};
+    }
+});
+function GetReview(req)
+{
+    var username = req.body.username;
+    var club = req.body.club;
+
+    if (username == undefined || club == undefined)
+    return {status: 403, body: {message: {message : "username or club is undefined"}}};
+    var tmp = global.ClubList.get(club);
+    if (tmp == undefined || global.UsersList.get(username) == undefined)
+        return {status: 401, body: {message: {message :  "Bad request"}}};
+    return {status: 200, body : tmp.commentaries};
+}
 
 function PostReview(req)
 {
