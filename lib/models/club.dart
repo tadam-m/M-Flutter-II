@@ -1,3 +1,5 @@
+import 'package:review/review.dart';
+
 enum Entrance {
   easy,
   medium,
@@ -9,19 +11,21 @@ class Club {
   String description;
   String location;
   bool camera;
-  double rating;
   String price;
   Entrance entrance;
   String clubbingTime;
+  double rating;
+  List<Review> reviews;
 
   Club({
     required this.name,
     required this.description,
     required this.location,
     required this.camera,
-    required this.rating,
     required this.price,
     required this.entrance,
     required this.clubbingTime,
+    required this.rating,
+    required this.reviews,
   });
 }

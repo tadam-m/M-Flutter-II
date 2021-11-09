@@ -1,4 +1,5 @@
 import 'package:http/http.dart' as http;
+import 'package:review/review.dart';
 import 'dart:convert';
 
 import 'package:techno_clubs_berlin/models/user.dart';
@@ -82,6 +83,18 @@ class ApiManager {
             name: jsonClub["name"],
             price: jsonClub["price"],
             rating: jsonClub["rate"].toDouble(),
+            reviews: [
+              Review(
+                  reviewerName: "Bob",
+                  reviewContent: "Trop délire",
+                  mark: 5,
+                  date: DateTime.now()),
+              Review(
+                  reviewerName: "Alex",
+                  reviewContent: "Wunderbar",
+                  mark: 4,
+                  date: DateTime.now())
+            ],
           ),
         ),
         growable: false,
