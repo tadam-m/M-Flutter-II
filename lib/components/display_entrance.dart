@@ -26,6 +26,9 @@ class DisplayEntranceString extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(entrance.toString().split('.').last);
+    return Text(
+      entrance.toString().split('.').last,
+      style: Theme.of(context).textTheme.bodyText1,
+    );
   }
 }
