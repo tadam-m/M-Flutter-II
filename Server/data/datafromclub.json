@@ -9,7 +9,8 @@
             "best clubbing times": "friday to monday, if you have the luck to get in",
             "difficulties to get in": "Very hard",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "Anomalie Art Club",
@@ -20,7 +21,8 @@
             "best clubbing times": "Friday",
             "difficulties to get in": "Medium",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "://about blank",
@@ -31,7 +33,8 @@
             "best clubbing times": "Sunday morning",
             "difficulties to get in": "Hard",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "Loophole Berlin",
@@ -42,7 +45,8 @@
             "best clubbing times": "Sunday night",
             "difficulties to get in": "Easy",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "Kater Blau",
@@ -53,7 +57,8 @@
             "best clubbing times": "Sunday night",
             "difficulties to get in": "Medium",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "KitKat",
@@ -64,7 +69,8 @@
             "best clubbing times": "Friday to the middle of saturday",
             "difficulties to get in": "Very hard",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "Süss War Gestern",
@@ -75,7 +81,8 @@
             "best clubbing times": "All weekend",
             "difficulties to get in": "easy",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "Clud der Visionaere",
@@ -86,7 +93,8 @@
             "best clubbing times": "Sunday around 6am",
             "difficulties to get in": "hard",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "Ritter Butzke",
@@ -97,7 +105,8 @@
             "best clubbing times": "Saturday night",
             "difficulties to get in": "hard",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "Watergate",
@@ -108,7 +117,8 @@
             "best clubbing times": "Saturday night",
             "difficulties to get in": "Medium",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "Golden Gate",
@@ -119,7 +129,8 @@
             "best clubbing times": "Friday night",
             "difficulties to get in": "Medium",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "YAAM",
@@ -130,7 +141,8 @@
             "best clubbing times": "Friday night",
             "difficulties to get in": "Medium",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "SchwuZ",
@@ -141,7 +153,8 @@
             "best clubbing times": "Sunday morning",
             "difficulties to get in": "Hard",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "Sisyphos",
@@ -152,7 +165,8 @@
             "best clubbing times": "Saturday night",
             "difficulties to get in": "Medium",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "Clärchens Ballhaus",
@@ -163,7 +177,8 @@
             "best clubbing times": "Friday night",
             "difficulties to get in": "Easy",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "Salon Zur Wilden Renate",
@@ -174,7 +189,8 @@
             "best clubbing times": "Sunday morning",
             "difficulties to get in": "Hard",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "Prince Charles",
@@ -185,7 +201,8 @@
             "best clubbing times": "Sunday night",
             "difficulties to get in": "Medium",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "Tresor",
@@ -196,7 +213,8 @@
             "best clubbing times": "Saturday night",
             "difficulties to get in": "Medium",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "OST Club",
@@ -207,7 +225,8 @@
             "best clubbing times": "Saturday night",
             "difficulties to get in": "Easy",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         },
         {
             "name": "Suicide Club",
@@ -218,7 +237,8 @@
             "best clubbing times": "Saturday night",
             "difficulties to get in": "Easy",
             "comments" : [],
-            "rate": 0.0
+            "rate": 0.0,
+            "reviews": 0
         }
     ]
 }

@@ -33,12 +33,7 @@ function PostReview(req)
     var tmp = global.ClubList.get(club);
     if (tmp == undefined || global.UsersList.get(username) == undefined)
         return new Response(401, {message: "Bad request"});
-    var i = 0;
-    var rate = 0;
-    while (i < tmp.reviews) {
-        rate += tmp.rate;
-        i++;
-    }
+    var rate = tmp.rate * tmp.reviews;
     tmp.reviews++;
     tmp.rate = (rate + review) / tmp.reviews;
     global.ClubList.set(club, tmp);
