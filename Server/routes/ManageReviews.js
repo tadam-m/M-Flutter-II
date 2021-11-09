@@ -19,7 +19,7 @@ function PostReview(req)
     var date = req.body.date;
     var club = req.body.club;
 
-    if (mark == undefined || Number(mark) == 'NaN' || username == undefined || club == undefined)
+    if (reviewContent == undefined || mark == undefined || Number(mark) == 'NaN' || username == undefined || club == undefined)
         return {status: 403, body: {message: {message : "username, club or review is undefined"}}};
     var tmp = global.ClubList.get(club);
     if (tmp == undefined || global.UsersList.get(username) == undefined)
