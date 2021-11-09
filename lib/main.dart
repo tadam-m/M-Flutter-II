@@ -5,8 +5,8 @@ import 'package:techno_clubs_berlin/screens/auth/register_screen.dart';
 import 'package:techno_clubs_berlin/themes/themes.dart';
 import 'package:techno_clubs_berlin/screens/splash_screen.dart';
 import 'package:techno_clubs_berlin/screens/auth/login_screen.dart';
-
 import 'constants/routes.dart';
+import 'screens/vue_club_list_screen.dart';
 
 void main() {
   runApp(const Routing());
@@ -33,6 +33,10 @@ class Routing extends StatelessWidget {
           name: registerRoute,
           page: () => const RegisterScreen(),
         ),
+        GetPage<VueClubListScreen>(
+          name: vueListClub,
+          page: () => const VueClubListScreen(),
+        ),
         // GetPage<LoginScreen>(
         //   name: loginRoute,
         //   page: () => LoginScreen(),
@@ -45,4 +49,3 @@ class Routing extends StatelessWidget {
     );
   }
 }
-

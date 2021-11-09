@@ -1,32 +1,42 @@
 var express = require('express');
 var router = express.Router();
 var users = new Map();
-var Response = require('../bin/response.js').Response;
+var Response = require('../object/response.js').Response;
 
 router.post('/login', function (req, res, next)
 {
-    res.json(login(req));
+    let response = login(req);
+    res.status(response.status).json(response.body);
 });
 
 router.post('/register', function (req, res, next)
 {
-    res.json(register(req));
+    let response = register(req);
+    res.status(response.status).json(response.body);
 });
 
 function register(req)
 {
-    if (users.get(req.body.username) != undefined)
+    var username = req.body.username;
+    var password = req.body.password;
+
+    if (username == undefined || password == undefined)
+        return new Response(403, "username or password is empty");
+    if (users.get(username) != undefined)
         return new Response(401, "This user already exist");
     else
-    {
-        users.set(req.body.username, req.body.password);
-        return new Response(200, "User " + req.body.username + " well created");
-    }
+        users.set(username, password);
+    return new Response(200, "User " + username + " well created");
 }
 
 function login(req)
 {
-    if (users.get(req.body.username) == req.body.password)
+    console.log(req);
+    var username = req.body.username;
+    var password = req.body.password;
+    if (username == undefined || password == undefined)
+        return new Response(403, "username or password is empty");
+    if (users.get(username) == password)
         return new Response(200, "You are now connected");
     else
         return new Response(401, "The username and password doesn't match");
