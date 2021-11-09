@@ -5,7 +5,7 @@ import 'package:techno_clubs_berlin/models/user.dart';
 import 'package:techno_clubs_berlin/API/custom_exception.dart';
 
 class ApiManager {
-  static String baseUrl = 'https://gehensiezumclub.';
+  static String baseUrl = 'https://gehensiezumclub.herokuapp.com';
   final http.Client client;
   ApiManager({required this.client});
 
