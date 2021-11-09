@@ -34,9 +34,11 @@ class VueClubScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       const Icon(Icons.place),
-                      Text(
-                        club.location,
-                        style: Theme.of(context).textTheme.bodyText1,
+                      Flexible(
+                        child: Text(
+                          club.location,
+                          style: Theme.of(context).textTheme.bodyText1,
+                        ),
                       ),
                     ],
                   ),
@@ -103,9 +105,11 @@ class VueClubScreen extends StatelessWidget {
                     const SizedBox(width: 10),
                     const Icon(Icons.schedule),
                     const SizedBox(width: 10),
-                    Text(
-                      club.clubbingTime,
-                      style: Theme.of(context).textTheme.bodyText1,
+                    Flexible(
+                      child: Text(
+                        club.clubbingTime,
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
                     ),
                   ],
                 ),
