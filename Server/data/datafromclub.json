@@ -10,7 +10,8 @@
             "difficulties to get in": "Very hard",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "Anomalie Art Club",
@@ -22,7 +23,8 @@
             "difficulties to get in": "Medium",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "://about blank",
@@ -34,7 +36,8 @@
             "difficulties to get in": "Hard",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "Loophole Berlin",
@@ -46,7 +49,8 @@
             "difficulties to get in": "Easy",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "Kater Blau",
@@ -58,7 +62,8 @@
             "difficulties to get in": "Medium",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "KitKat",
@@ -70,7 +75,8 @@
             "difficulties to get in": "Very hard",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "Süss War Gestern",
@@ -82,7 +88,8 @@
             "difficulties to get in": "easy",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "Clud der Visionaere",
@@ -94,7 +101,8 @@
             "difficulties to get in": "hard",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "Ritter Butzke",
@@ -106,7 +114,8 @@
             "difficulties to get in": "hard",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "Watergate",
@@ -118,7 +127,8 @@
             "difficulties to get in": "Medium",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "Golden Gate",
@@ -130,7 +140,8 @@
             "difficulties to get in": "Medium",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "YAAM",
@@ -142,7 +153,8 @@
             "difficulties to get in": "Medium",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "SchwuZ",
@@ -154,7 +166,8 @@
             "difficulties to get in": "Hard",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "Sisyphos",
@@ -166,7 +179,8 @@
             "difficulties to get in": "Medium",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "Clärchens Ballhaus",
@@ -178,7 +192,8 @@
             "difficulties to get in": "Easy",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "Salon Zur Wilden Renate",
@@ -190,7 +205,8 @@
             "difficulties to get in": "Hard",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "Prince Charles",
@@ -202,7 +218,8 @@
             "difficulties to get in": "Medium",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "Tresor",
@@ -214,7 +231,8 @@
             "difficulties to get in": "Medium",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "OST Club",
@@ -226,7 +244,8 @@
             "difficulties to get in": "Easy",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         },
         {
             "name": "Suicide Club",
@@ -238,7 +257,8 @@
             "difficulties to get in": "Easy",
             "comments" : [],
             "rate": 0.0,
-            "reviews": 0
+            "reviews": 0,
+            "commentaries": []
         }
     ]
 }
