@@ -13,9 +13,9 @@ void testAuthWidgets() {
   Widget buildTestableWidget(Widget widget) {
     return MediaQuery(
         data: const MediaQueryData(),
-        child: MaterialApp(home: Scaffold(body: widget))
-    );
+        child: MaterialApp(home: Scaffold(body: widget)));
   }
+
   LoginScreen loginScreen = const LoginScreen();
   RegisterScreen registerScreen = const RegisterScreen();
 
@@ -23,7 +23,9 @@ void testAuthWidgets() {
   When the user taps on the login button
   Then we don't attempt to sign in
 */
-  testWidgets('Login Widget handle empty form fields error and find all widgets on the screen', (WidgetTester tester) async {
+  testWidgets(
+      'Login Widget handle empty form fields error and find all widgets on the screen',
+      (WidgetTester tester) async {
     await tester.pumpWidget(buildTestableWidget(loginScreen));
     Finder hintEmailText = find.byKey(const Key('email'));
     Finder hintPasswordText = find.byKey(const Key('password'));
@@ -39,7 +41,8 @@ void testAuthWidgets() {
     expect(find.text("Password is required"), findsOneWidget);
   });
 
-  testWidgets('Login Widget handle empty username only !', (WidgetTester tester) async {
+  testWidgets('Login Widget handle empty username only !',
+      (WidgetTester tester) async {
     await tester.pumpWidget(buildTestableWidget(loginScreen));
     Finder hintEmailText = find.byKey(const Key('email'));
     Finder hintPasswordText = find.byKey(const Key('password'));
@@ -57,7 +60,8 @@ void testAuthWidgets() {
     expect(find.text("Password is required"), findsNothing);
   });
 
-  testWidgets('Login Widget handle empty password only !', (WidgetTester tester) async {
+  testWidgets('Login Widget handle empty password only !',
+      (WidgetTester tester) async {
     await tester.pumpWidget(buildTestableWidget(loginScreen));
     Finder hintEmailText = find.byKey(const Key('email'));
     Finder hintPasswordText = find.byKey(const Key('password'));
@@ -75,8 +79,8 @@ void testAuthWidgets() {
     expect(find.text("Password is required"), findsOneWidget);
   });
 
-  testWidgets('Register Widget has an input name, password and login button', (WidgetTester tester) async {
-
+  testWidgets('Register Widget has an input name, password and login button',
+      (WidgetTester tester) async {
     await tester.pumpWidget(buildTestableWidget(registerScreen));
     Finder hintUsernameText = find.byKey(const Key('usernameRegister'));
     Finder hintEmailText = find.byKey(const Key('emailRegister'));
@@ -96,7 +100,8 @@ void testAuthWidgets() {
     expect(find.text("Password is required"), findsOneWidget);
   });
 
-  testWidgets('Register Widget handle empty password only !', (WidgetTester tester) async {
+  testWidgets('Register Widget handle empty password only !',
+      (WidgetTester tester) async {
     await tester.pumpWidget(buildTestableWidget(registerScreen));
     Finder hintUsernameText = find.byKey(const Key('usernameRegister'));
     Finder hintEmailText = find.byKey(const Key('emailRegister'));
@@ -107,9 +112,9 @@ void testAuthWidgets() {
     expect(hintPasswordText, findsOneWidget);
     expect(registerButton, findsOneWidget);
 
-   await tester.enterText(hintUsernameText, 'testEmailField');
-   await tester.enterText(hintEmailText, 'testUsernameField');
-   await tester.pump();
+    await tester.enterText(hintUsernameText, 'testEmailField');
+    await tester.enterText(hintEmailText, 'testUsernameField');
+    await tester.pump();
 
     await tester.tap(registerButton);
     await tester.pump();

@@ -11,18 +11,21 @@ class CustomException implements Exception {
 }
 
 class FetchDataException extends CustomException {
-  FetchDataException(message)
-      : super(message, "Error During Communication: ");
+  FetchDataException(message) : super(message, "Error During Communication: ");
 }
 
 class BadRequestException extends CustomException {
-  BadRequestException(message) : super(message.substring (1, message.length -1), "Unauthorised: " );
+  BadRequestException(message)
+      : super(message.substring(1, message.length - 1), "Unauthorised: ");
 }
 
 class UnauthorisedException extends CustomException {
-  UnauthorisedException(message) : super(message.substring (1, message.length -1), "Forbidden: ");
+  UnauthorisedException(message)
+      : super(message.substring(1, message.length - 1), "Forbidden: ");
 }
 
 class InvalidInputException extends CustomException {
-  InvalidInputException(message) : super(message.substring (1, message.length -1), "Internal Server Error: ");
+  InvalidInputException(message)
+      : super(message.substring(1, message.length - 1),
+            "Internal Server Error: ");
 }

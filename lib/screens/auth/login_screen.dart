@@ -38,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
               setState(() {
                 _isLoading = false;
               }),
-                Get.snackbar('Login failed', error.toString()),
+              Get.snackbar('Login failed', error.toString()),
             });
   }
 

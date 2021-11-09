@@ -41,7 +41,8 @@ void authUnitTest() {
       });
     });
 
-    test('throws a BadRequestException if the http call completes with an error 401',
+    test(
+        'throws a BadRequestException if the http call completes with an error 401',
         () async {
       final client = MockClient();
       const name = "";
@@ -53,9 +54,9 @@ void authUnitTest() {
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
-        body: jsonEncode(
-            <String, String>{'username': name, 'password': pass}),
-      )).thenAnswer((_) async => http.Response('"Please verify your information"', 401));
+        body: jsonEncode(<String, String>{'username': name, 'password': pass}),
+      )).thenAnswer(
+          (_) async => http.Response('"Please verify your information"', 401));
       final api = ApiManager(client: client);
       try {
         await api.registerUser(name, pass);
@@ -64,150 +65,152 @@ void authUnitTest() {
       }
     });
 
-    test('throws a UnauthorisedException if the http call completes with an error 403',
-            () async {
-          final client = MockClient();
-          const name = "";
-          const pass = "";
-          // Use Mockito to return an unsuccessful response when it calls the
-          // provided http.Client.
-          when(client.post(
-            Uri.parse(baseUrl + '/users/register'),
-            headers: <String, String>{
-              'Content-Type': 'application/json; charset=UTF-8',
-            },
-            body: jsonEncode(
-                <String, String>{'username': name, 'password': pass}),
-          )).thenAnswer((_) async => http.Response('"Please verify your information"', 403));
-          final api = ApiManager(client: client);
-          try {
-            await api.registerUser(name, pass);
-          } catch (e) {
-            expect(e, isA<UnauthorisedException>());
-          }
+    test(
+        'throws a UnauthorisedException if the http call completes with an error 403',
+        () async {
+      final client = MockClient();
+      const name = "";
+      const pass = "";
+      // Use Mockito to return an unsuccessful response when it calls the
+      // provided http.Client.
+      when(client.post(
+        Uri.parse(baseUrl + '/users/register'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, String>{'username': name, 'password': pass}),
+      )).thenAnswer(
+          (_) async => http.Response('"Please verify your information"', 403));
+      final api = ApiManager(client: client);
+      try {
+        await api.registerUser(name, pass);
+      } catch (e) {
+        expect(e, isA<UnauthorisedException>());
+      }
     });
 
-    test('throws a FetchDataException if the http call completes with an error 500',
-            () async {
-          final client = MockClient();
-          const name = "";
-          const pass = "";
-          // Use Mockito to return an unsuccessful response when it calls the
-          // provided http.Client.
-          when(client.post(
-            Uri.parse(baseUrl + '/users/register'),
-            headers: <String, String>{
-              'Content-Type': 'application/json; charset=UTF-8',
-            },
-            body: jsonEncode(
-                <String, String>{'username': name, 'password': pass}),
-          )).thenAnswer((_) async => http.Response('"Error occured while Communication with Server"', 500));
-          final api = ApiManager(client: client);
-          try {
-            await api.registerUser(name, pass);
-          } catch (e) {
-            expect(e, isA<FetchDataException>());
-          }
-        }
-        );
-
+    test(
+        'throws a FetchDataException if the http call completes with an error 500',
+        () async {
+      final client = MockClient();
+      const name = "";
+      const pass = "";
+      // Use Mockito to return an unsuccessful response when it calls the
+      // provided http.Client.
+      when(client.post(
+        Uri.parse(baseUrl + '/users/register'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, String>{'username': name, 'password': pass}),
+      )).thenAnswer((_) async => http.Response(
+          '"Error occured while Communication with Server"', 500));
+      final api = ApiManager(client: client);
+      try {
+        await api.registerUser(name, pass);
+      } catch (e) {
+        expect(e, isA<FetchDataException>());
+      }
+    });
 
     group('Login Test', () {
       test('Returns a User if the login method completes successfully',
-              () async {
-            final client = MockClient();
-            const name = "tadam";
-            const pass = "tadam";
+          () async {
+        final client = MockClient();
+        const name = "tadam";
+        const pass = "tadam";
 // Use Mockito to return a successful response when it calls the
 // provided http.Client.
-            when(client.post(
-              Uri.parse(baseUrl + '/users/login'),
-              headers: <String, String>{
-                'Content-Type': 'application/json; charset=UTF-8',
-              },
-              body: jsonEncode(
-                  <String, String>{'username': name, 'password': pass}),
-            )).thenAnswer((_) async => http.Response(
-                File('test/test_resources/random_user.json').readAsStringSync(),
-                200));
+        when(client.post(
+          Uri.parse(baseUrl + '/users/login'),
+          headers: <String, String>{
+            'Content-Type': 'application/json; charset=UTF-8',
+          },
+          body:
+              jsonEncode(<String, String>{'username': name, 'password': pass}),
+        )).thenAnswer((_) async => http.Response(
+            File('test/test_resources/random_user.json').readAsStringSync(),
+            200));
 
-            final api = ApiManager(client: client);
-            final user = await api.loginUser(name, pass);
+        final api = ApiManager(client: client);
+        final user = await api.loginUser(name, pass);
 
-            expect(user, isInstanceOf<User>());
-            expect(user.name, name);
-            expect(user.password, pass);
-          });
+        expect(user, isInstanceOf<User>());
+        expect(user.name, name);
+        expect(user.password, pass);
+      });
     });
 
-    test('throws a BadRequestException if the http call completes with an error 401',
-            () async {
-          final client = MockClient();
-          const name = "";
-          const pass = "";
-          // Use Mockito to return an unsuccessful response when it calls the
-          // provided http.Client.
-          when(client.post(
-            Uri.parse(baseUrl + '/users/login'),
-            headers: <String, String>{
-              'Content-Type': 'application/json; charset=UTF-8',
-            },
-            body: jsonEncode(
-                <String, String>{'username': name, 'password': pass}),
-          )).thenAnswer((_) async => http.Response('"Please verify your information"', 401));
-          final api = ApiManager(client: client);
-          try {
-            await api.loginUser(name, pass);
-          } catch (e) {
-            expect(e, isA<BadRequestException>());
-          }
-        });
-
-    test('throws a UnauthorisedException if the http call completes with an error 403',
-            () async {
-          final client = MockClient();
-          const name = "";
-          const pass = "";
-          // Use Mockito to return an unsuccessful response when it calls the
-          // provided http.Client.
-          when(client.post(
-            Uri.parse(baseUrl + '/users/login'),
-            headers: <String, String>{
-              'Content-Type': 'application/json; charset=UTF-8',
-            },
-            body: jsonEncode(
-                <String, String>{'username': name, 'password': pass}),
-          )).thenAnswer((_) async => http.Response('"Please verify your information"', 403));
-          final api = ApiManager(client: client);
-          try {
-            await api.loginUser(name, pass);
-          } catch (e) {
-            expect(e, isA<UnauthorisedException>());
-          }
-        });
-
-    test('throws a FetchDataException if the http call completes with an error 500',
-            () async {
-          final client = MockClient();
-          const name = "";
-          const pass = "";
-          // Use Mockito to return an unsuccessful response when it calls the
-          // provided http.Client.
-          when(client.post(
-            Uri.parse(baseUrl + '/users/login'),
-            headers: <String, String>{
-              'Content-Type': 'application/json; charset=UTF-8',
-            },
-            body: jsonEncode(
-                <String, String>{'username': name, 'password': pass}),
-          )).thenAnswer((_) async => http.Response('"Error occured while Communication with Server"', 500));
-          final api = ApiManager(client: client);
-          try {
-            await api.loginUser(name, pass);
-          } catch (e) {
-            expect(e, isA<FetchDataException>());
-          }
-        }
-    );
+    test(
+        'throws a BadRequestException if the http call completes with an error 401',
+        () async {
+      final client = MockClient();
+      const name = "";
+      const pass = "";
+      // Use Mockito to return an unsuccessful response when it calls the
+      // provided http.Client.
+      when(client.post(
+        Uri.parse(baseUrl + '/users/login'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, String>{'username': name, 'password': pass}),
+      )).thenAnswer(
+          (_) async => http.Response('"Please verify your information"', 401));
+      final api = ApiManager(client: client);
+      try {
+        await api.loginUser(name, pass);
+      } catch (e) {
+        expect(e, isA<BadRequestException>());
+      }
     });
+
+    test(
+        'throws a UnauthorisedException if the http call completes with an error 403',
+        () async {
+      final client = MockClient();
+      const name = "";
+      const pass = "";
+      // Use Mockito to return an unsuccessful response when it calls the
+      // provided http.Client.
+      when(client.post(
+        Uri.parse(baseUrl + '/users/login'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, String>{'username': name, 'password': pass}),
+      )).thenAnswer(
+          (_) async => http.Response('"Please verify your information"', 403));
+      final api = ApiManager(client: client);
+      try {
+        await api.loginUser(name, pass);
+      } catch (e) {
+        expect(e, isA<UnauthorisedException>());
+      }
+    });
+
+    test(
+        'throws a FetchDataException if the http call completes with an error 500',
+        () async {
+      final client = MockClient();
+      const name = "";
+      const pass = "";
+      // Use Mockito to return an unsuccessful response when it calls the
+      // provided http.Client.
+      when(client.post(
+        Uri.parse(baseUrl + '/users/login'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, String>{'username': name, 'password': pass}),
+      )).thenAnswer((_) async => http.Response(
+          '"Error occured while Communication with Server"', 500));
+      final api = ApiManager(client: client);
+      try {
+        await api.loginUser(name, pass);
+      } catch (e) {
+        expect(e, isA<FetchDataException>());
+      }
+    });
+  });
 }
