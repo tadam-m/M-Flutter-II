@@ -23,6 +23,12 @@ class _VueClubListScreenState extends State<VueClubListScreen> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    getClubs();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -30,7 +36,7 @@ class _VueClubListScreenState extends State<VueClubListScreen> {
         elevation: 0,
       ),
       body: SafeArea(
-        child: Wrap(
+        child: ListView(
           children: clubs.map((club) => ClubCard(club)).toList(),
         ),
       ),

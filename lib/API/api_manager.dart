@@ -64,7 +64,7 @@ class ApiManager {
 
   Future<List<Club>> getClubs() async {
     final response = await client.get(
-      Uri.parse(baseUrl + '/getList'),
+      Uri.parse(baseUrl + '/Clubs/getList'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -77,11 +77,11 @@ class ApiManager {
             camera: jsonClub["camera"],
             clubbingTime: jsonClub["best clubbing times"],
             description: jsonClub["description"],
-            entrance: _translateEntrance(jsonClub["entrance"]),
+            entrance: _translateEntrance(jsonClub["difficulties to get in"]),
             location: jsonClub["location"],
             name: jsonClub["name"],
             price: jsonClub["price"],
-            rating: jsonClub["rate"],
+            rating: jsonClub["rate"].toDouble(),
           ),
         ),
         growable: false,
