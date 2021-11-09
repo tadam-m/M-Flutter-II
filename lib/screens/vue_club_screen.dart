@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:review/review.dart';
 import 'package:techno_clubs_berlin/components/display_entrance.dart';
 import 'package:techno_clubs_berlin/components/display_rating.dart';
 
@@ -121,7 +122,7 @@ class VueClubScreen extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
                     const SizedBox(width: 10),
-                    DisplayRating(club.rating),
+                    StarRating(rating: club.rating.toInt()),
                   ],
                 ),
               ],
