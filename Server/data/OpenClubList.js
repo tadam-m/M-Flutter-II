@@ -2,7 +2,7 @@ const fs = require("fs");
 
 function ReadClubFile()
 {
-    var jsonString = fs.readFileSync("./data/datafromclub.json", "utf8");
+    var jsonString = fs.readFileSync(__dirname + "/datafromclub.json", "utf8");
     var object = JSON.parse(jsonString);
     var array = [];
     array = object.clubs;

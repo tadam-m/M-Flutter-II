@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var Response = require('../object/response.js').Response;
 
 router.get('/getList', function (req, res, next)
 {
@@ -29,10 +28,10 @@ function getList(req)
     var username = req.body.username;
 
     if (username == undefined)
-        return new Response(403, {message: "username is empty"});
+        return {status: 403, body: {message: "username is empty"}};
     if (global.UsersList.get(username) == undefined)
-        return new Response(401, {message: "Bad request"});
-    return new Response(200, global.ClubList);
+        return {status: 401, body: {message: "Bad request"}};
+    return {status: 200, body: global.ClubList};
 }
 
 function getClub(req)
@@ -41,11 +40,11 @@ function getClub(req)
     var club = req.body.club;
 
     if (username == undefined || club == undefined)
-        return new Response(403, {message: "username or club is empty"});
+        return {status: 403, body: {message: "username or club is empty"}};
     var tmp = global.ClubList.get(club);
     if (tmp == undefined || global.UsersList.get(username) == undefined)
-        return new Response(401, {message: "Bad request"});
-    return new Response(200, tmp);
+        return {status: 401, body: {message: "Bad request"}};
+    return {status: 200, body: tmp};
 
 
 }

@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var Response = require('../object/response.js').Response;
 
 router.post('/login', function (req, res, next)
 {
@@ -30,23 +29,24 @@ function register(req)
     var password = req.body.password;
 
     if (username == undefined || password == undefined)
-        return new Response(403, {message: "username or password is empty"});
+        return {status: 403, body: {message: "username or password is empty"}};
     if (global.UsersList.get(username) != undefined)
-        return new Response(401, {message: "This user already exist"});
+        return {status: 401, body: {message: "This user already exist"}};
     global.UsersList.set(username, password);
-    return new Response(200, {message: "User " + username + " well created"});
+    return {status: 200, body : {message: "User " + username + " well created", username : username}};
 }
 
 function login(req)
 {
-    console.log(req);
     var username = req.body.username;
     var password = req.body.password;
+
     if (username == undefined || password == undefined)
-        return new Response(403, {message: "username or password is empty"});
+        return {status: 403, body: {message: "This user already exist"}};
     if (global.UsersList.get(username) == password)
-        return new Response(200, {message : "You are now connected", username : username});
+        return {status: 200, body: {message : "You are now connected", username : username}};
     else
-        return new Response(401, {message: "The username and password doesn't match"});
+        return {status: 401, body: {message: "The username and password doesn't match"}};
 }
+
 module.exports = router;
