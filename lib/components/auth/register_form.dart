@@ -20,12 +20,14 @@ class RegisterForm extends StatelessWidget {
         child: Column(
           children: <Widget>[
             TextField(
+              key: const Key('usernameRegister'),
               controller: usernameController,
               decoration: const InputDecoration(labelText: 'Username'),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 10.0),
               child: TextField(
+                key: const Key('emailRegister'),
                 controller: emailController,
                 decoration: const InputDecoration(labelText: 'Email'),
               ),
@@ -33,6 +35,7 @@ class RegisterForm extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 10.0),
               child: TextField(
+                key: const Key('passwordRegister'),
                 controller: passwordController,
                 decoration: const InputDecoration(labelText: 'Password'),
                 obscureText: true,

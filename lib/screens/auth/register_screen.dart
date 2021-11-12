@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'package:techno_clubs_berlin/API/api_manager.dart';
+import 'package:http/http.dart' as http;
 
-import 'package:techno_clubs_berlin/components/auth/register_form.dart';
+import 'package:techno_clubs_berlin/API/api_manager.dart';
 import 'package:techno_clubs_berlin/constants/routes.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -19,6 +19,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final ApiManager _apiProvider = ApiManager(client: http.Client());
+  final _formKey = GlobalKey<FormState>();
+
   bool _isLoading = false;
 
   Future<void> register() async {
@@ -28,12 +31,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
       Get.snackbar('Error', 'All information are mandatory');
       return;
     }
-    await ApiManager().registerUser(_emailController.text, _passwordController.text)
+    await _apiProvider
+        .registerUser(_usernameController.text, _passwordController.text)
         .then((value) => {
               Get.snackbar('Register Success', 'Register as : ' + value.name),
               setState(() {
                 _isLoading = false;
               }),
+              Get.offNamed(vueListClub),
             })
         .onError((error, stackTrace) => {
               log(error.toString()),
@@ -42,7 +47,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
               }),
               Get.snackbar('Register failed', error.toString()),
             });
-   /* Get.offAllNamed(homeRoute);*/
   }
 
   @override
@@ -75,13 +79,60 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         Expanded(
                           flex: 2,
                           child: Container(
-                            alignment: Alignment.center,
-                            child: RegisterForm(
-                              usernameController: _usernameController,
-                              emailController: _emailController,
-                              passwordController: _passwordController,
-                            ),
-                          ),
+                              alignment: Alignment.center,
+                              child: Form(
+                                key: _formKey,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 25),
+                                  child: Column(
+                                    children: <Widget>[
+                                      TextFormField(
+                                        key: const Key('usernameRegister'),
+                                        controller: _usernameController,
+                                        decoration: const InputDecoration(
+                                            labelText: 'Username'),
+                                        validator: (value) {
+                                          if (value == "" || value == null) {
+                                            return "Username is required";
+                                          }
+                                        },
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 10.0),
+                                        child: TextFormField(
+                                            key: const Key('emailRegister'),
+                                            controller: _emailController,
+                                            decoration: const InputDecoration(
+                                                labelText: 'Email'),
+                                            validator: (value) {
+                                              if (value == "" ||
+                                                  value == null) {
+                                                return "Email is required";
+                                              }
+                                            }),
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 10.0),
+                                        child: TextFormField(
+                                          key: const Key('passwordRegister'),
+                                          controller: _passwordController,
+                                          decoration: const InputDecoration(
+                                              labelText: 'Password'),
+                                          obscureText: true,
+                                          validator: (value) {
+                                            if (value == "" || value == null) {
+                                              return "Password is required";
+                                            }
+                                          },
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              )),
                         ),
                         Expanded(
                           flex: 1,
@@ -90,8 +141,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             child: Column(
                               children: <Widget>[
                                 ElevatedButton(
-                                  onPressed: register,
-//                                onPressed: register,
+                                  key: const Key('register'),
+                                  onPressed: () {
+                                    if (_formKey.currentState!.validate()) {
+                                      setState(() {
+                                        _isLoading = true;
+                                      });
+                                      register();
+                                    }
+                                  }, //signIn,
+
                                   child: const Text('Register'),
                                 ),
                                 ElevatedButton(
