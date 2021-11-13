@@ -37,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: const <Widget>[
               Padding(
-                padding: EdgeInsets.only(top: 30.0),
+                padding: EdgeInsets.only(top: 0.0),
                 child: Image(image: AssetImage('assets/icon-app.jpg')),
               ),
               SizedBox(
@@ -49,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 50.0),
+                padding: EdgeInsets.only(top: 00.0),
                 child: CircularProgressIndicator(value: null),
               ),
             ],

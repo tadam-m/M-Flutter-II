@@ -21,8 +21,10 @@ Entrance _translateEntrance(String entrance) {
 }
 
 class ApiManager {
-  static String baseUrl = 'http://10.0.2.2:4000/api/gehenSiezumClub';
-  http.Client client = http.Client();
+  static String baseUrl =
+      'https://gehensiezumclub.herokuapp.com/api/gehenSiezumClub';
+  final http.Client client;
+  ApiManager({required this.client});
 
   Future<User> loginUser(String username, String password) async {
     final response = await client.post(

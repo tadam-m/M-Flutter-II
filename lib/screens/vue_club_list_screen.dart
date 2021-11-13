@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:techno_clubs_berlin/API/api_manager.dart';
 import 'package:techno_clubs_berlin/components/club_card.dart';
+import 'package:http/http.dart' as http;
 
 import '/models/club.dart';
 
@@ -13,9 +14,10 @@ class VueClubListScreen extends StatefulWidget {
 
 class _VueClubListScreenState extends State<VueClubListScreen> {
   List<Club> clubs = [];
+  final ApiManager _apiProvider = ApiManager(client: http.Client());
 
   getClubs() async {
-    ApiManager().getClubs().then((newClubs) {
+    _apiProvider.getClubs().then((newClubs) {
       setState(() {
         clubs = newClubs;
       });
