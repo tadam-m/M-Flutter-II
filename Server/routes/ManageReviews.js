@@ -54,9 +54,6 @@ function PostReview(req) {
   var tmp = global.ClubList.get(club);
   if (tmp == undefined || global.UsersList.get(username) == undefined)
     return { status: 401, body: { message: { message: "Bad request" } } };
-  var rate = tmp.rate * tmp.reviews;
-  tmp.reviews++;
-  tmp.rate = (rate + mark) / tmp.reviews;
   global.ClubList.get(club).reviews.push({
     reviewerName: username,
     reviewContent: reviewContent,
