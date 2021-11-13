@@ -39,7 +39,7 @@ class ClubCard extends StatelessWidget {
                   const SizedBox(width: 10),
                   DisplayEntrance(club.entrance),
                   const SizedBox(width: 10),
-                  StarRating(rating: club.rating.toInt()),
+                  StarRating(rating: club.rating?.toInt()),
                 ],
               ),
             ],

@@ -121,7 +121,7 @@ class VueClubScreen extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
                     const SizedBox(width: 10),
-                    StarRating(rating: club.rating.toInt()),
+                    StarRating(rating: club.rating?.toInt()),
                   ],
                 ),
                 const SizedBox(height: 20),
@@ -130,7 +130,11 @@ class VueClubScreen extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyText1,
                 ),
                 const SizedBox(height: 20),
-                ...club.reviews.map((review) => ReviewDisplay(review: review)),
+                if (club.reviews.isEmpty)
+                  const Text("No reviews")
+                else
+                  ...club.reviews
+                      .map((review) => ReviewDisplay(review: review)),
               ],
             ),
           ),

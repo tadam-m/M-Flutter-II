@@ -14,7 +14,7 @@ class Club {
   String price;
   Entrance entrance;
   String clubbingTime;
-  double rating;
+  double? rating;
   List<Review> reviews;
 
   Club({

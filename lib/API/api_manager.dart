@@ -21,8 +21,7 @@ Entrance _translateEntrance(String entrance) {
 }
 
 class ApiManager {
-  static String baseUrl =
-      'https://gehensiezumclub.herokuapp.com/api/gehenSiezumClub';
+  static String baseUrl = 'http://10.0.2.2:4000/api/gehenSiezumClub';
   http.Client client = http.Client();
 
   Future<User> loginUser(String username, String password) async {
@@ -74,28 +73,37 @@ class ApiManager {
     if (response.statusCode == 200) {
       return List<Club>.from(
         responseJson.map(
-          (jsonClub) => Club(
-            camera: jsonClub["camera"],
-            clubbingTime: jsonClub["best clubbing times"],
-            description: jsonClub["description"],
-            entrance: _translateEntrance(jsonClub["difficulties to get in"]),
-            location: jsonClub["location"],
-            name: jsonClub["name"],
-            price: jsonClub["price"],
-            rating: jsonClub["rate"].toDouble(),
-            reviews: [
-              Review(
-                  reviewerName: "Bob",
-                  reviewContent: "Trop délire",
-                  mark: 5,
-                  date: DateTime.now()),
-              Review(
-                  reviewerName: "Alex",
-                  reviewContent: "Wunderbar",
-                  mark: 4,
-                  date: DateTime.now())
-            ],
-          ),
+          (jsonClub) {
+            final reviewsData = jsonClub["reviews"];
+            final List<Review> reviews = reviewsData is List
+                ? reviewsData
+                    .map((jsonReview) => Review(
+                          reviewerName: jsonReview["reviewerName"],
+                          reviewContent: jsonReview["reviewContent"],
+                          mark: jsonReview["mark"],
+                          date: DateTime.parse(jsonReview["date"]),
+                        ))
+                    .toList()
+                : List.empty();
+
+            return Club(
+              camera: jsonClub["camera"],
+              clubbingTime: jsonClub["best clubbing times"],
+              description: jsonClub["description"],
+              entrance: _translateEntrance(jsonClub["difficulties to get in"]),
+              location: jsonClub["location"],
+              name: jsonClub["name"],
+              price: jsonClub["price"],
+              reviews: reviews,
+              rating: reviews.isEmpty
+                  ? null
+                  : reviews.fold<double>(
+                          0,
+                          (previousValue, element) =>
+                              previousValue + element.mark) /
+                      reviews.length,
+            );
+          },
         ),
         growable: false,
       );
