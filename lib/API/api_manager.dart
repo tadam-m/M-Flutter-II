@@ -1,4 +1,5 @@
 import 'package:http/http.dart' as http;
+import 'package:review/review.dart';
 import 'dart:convert';
 
 import 'package:techno_clubs_berlin/models/user.dart';
@@ -22,7 +23,6 @@ Entrance _translateEntrance(String entrance) {
 class ApiManager {
   static String baseUrl =
       'https://gehensiezumclub.herokuapp.com/api/gehenSiezumClub';
-  //http.Client client = http.Client();
   final http.Client client;
   ApiManager({required this.client});
 
@@ -75,16 +75,37 @@ class ApiManager {
     if (response.statusCode == 200) {
       return List<Club>.from(
         responseJson.map(
-          (jsonClub) => Club(
-            camera: jsonClub["camera"],
-            clubbingTime: jsonClub["best clubbing times"],
-            description: jsonClub["description"],
-            entrance: _translateEntrance(jsonClub["difficulties to get in"]),
-            location: jsonClub["location"],
-            name: jsonClub["name"],
-            price: jsonClub["price"],
-            rating: jsonClub["rate"].toDouble(),
-          ),
+          (jsonClub) {
+            final reviewsData = jsonClub["reviews"];
+            final List<Review> reviews = reviewsData is List
+                ? reviewsData
+                    .map((jsonReview) => Review(
+                          reviewerName: jsonReview["reviewerName"],
+                          reviewContent: jsonReview["reviewContent"],
+                          mark: jsonReview["mark"],
+                          date: DateTime.parse(jsonReview["date"]),
+                        ))
+                    .toList()
+                : List.empty();
+
+            return Club(
+              camera: jsonClub["camera"],
+              clubbingTime: jsonClub["best clubbing times"],
+              description: jsonClub["description"],
+              entrance: _translateEntrance(jsonClub["difficulties to get in"]),
+              location: jsonClub["location"],
+              name: jsonClub["name"],
+              price: jsonClub["price"],
+              reviews: reviews,
+              rating: reviews.isEmpty
+                  ? null
+                  : reviews.fold<double>(
+                          0,
+                          (previousValue, element) =>
+                              previousValue + element.mark) /
+                      reviews.length,
+            );
+          },
         ),
         growable: false,
       );

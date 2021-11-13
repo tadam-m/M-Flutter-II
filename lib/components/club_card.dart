@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:review/review.dart';
 import 'package:techno_clubs_berlin/components/display_entrance.dart';
-import 'package:techno_clubs_berlin/components/display_rating.dart';
 
 import 'package:techno_clubs_berlin/models/club.dart';
 import 'package:techno_clubs_berlin/screens/vue_club_screen.dart';
@@ -39,7 +39,7 @@ class ClubCard extends StatelessWidget {
                   const SizedBox(width: 10),
                   DisplayEntrance(club.entrance),
                   const SizedBox(width: 10),
-                  DisplayRating(club.rating),
+                  StarRating(rating: club.rating?.toInt()),
                 ],
               ),
             ],

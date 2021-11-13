@@ -8,10 +8,14 @@
       "price": "15 - 20 euros",
       "best clubbing times": "friday to monday, if you have the luck to get in",
       "difficulties to get in": "Very hard",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": [
+        {
+          "reviewerName": "Bob",
+          "reviewContent": "Never got in",
+          "mark": 0,
+          "date": "2021-11-01T02:27:12Z"
+        }
+      ]
     },
     {
       "name": "Anomalie Art Club",
@@ -21,10 +25,7 @@
       "price": "20 - 25 euros",
       "best clubbing times": "Friday",
       "difficulties to get in": "Medium",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "://about blank",
@@ -34,10 +35,7 @@
       "price": "15 - 18 euros",
       "best clubbing times": "Sunday morning",
       "difficulties to get in": "Hard",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "Loophole Berlin",
@@ -47,10 +45,7 @@
       "price": "10 - 15 euros",
       "best clubbing times": "Sunday night",
       "difficulties to get in": "Easy",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "Kater Blau",
@@ -60,10 +55,7 @@
       "price": "15 - 18 euros",
       "best clubbing times": "Sunday night",
       "difficulties to get in": "Medium",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "KitKat",
@@ -73,10 +65,7 @@
       "price": "20 - 23 euros",
       "best clubbing times": "Friday to the middle of saturday",
       "difficulties to get in": "Very hard",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "Süss War Gestern",
@@ -86,10 +75,7 @@
       "price": "0 euros",
       "best clubbing times": "All weekend",
       "difficulties to get in": "easy",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "Clud der Visionaere",
@@ -99,10 +85,7 @@
       "price": "15 - 18 euros",
       "best clubbing times": "Sunday around 6am",
       "difficulties to get in": "hard",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "Ritter Butzke",
@@ -112,10 +95,7 @@
       "price": "20 - 23 euros",
       "best clubbing times": "Saturday night",
       "difficulties to get in": "hard",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "Watergate",
@@ -125,10 +105,7 @@
       "price": "20 - 23 euros",
       "best clubbing times": "Saturday night",
       "difficulties to get in": "Medium",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "Golden Gate",
@@ -138,10 +115,7 @@
       "price": "16 - 18 euros",
       "best clubbing times": "Friday night",
       "difficulties to get in": "Medium",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "YAAM",
@@ -151,10 +125,7 @@
       "price": "10 - 12 euros",
       "best clubbing times": "Friday night",
       "difficulties to get in": "Medium",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "SchwuZ",
@@ -164,10 +135,7 @@
       "price": "17 - 20 euros",
       "best clubbing times": "Sunday morning",
       "difficulties to get in": "Hard",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "Sisyphos",
@@ -177,10 +145,7 @@
       "price": "15 - 25 euros",
       "best clubbing times": "Saturday night",
       "difficulties to get in": "Medium",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "Clärchens Ballhaus",
@@ -190,10 +155,7 @@
       "price": "8 - 12 euros",
       "best clubbing times": "Friday night",
       "difficulties to get in": "Easy",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "Salon Zur Wilden Renate",
@@ -203,10 +165,7 @@
       "price": "15 - 20 euros",
       "best clubbing times": "Sunday morning",
       "difficulties to get in": "Hard",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "Prince Charles",
@@ -216,10 +175,7 @@
       "price": "25 - 30 euros",
       "best clubbing times": "Sunday night",
       "difficulties to get in": "Medium",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "Tresor",
@@ -229,10 +185,7 @@
       "price": "15 - 20 euros",
       "best clubbing times": "Saturday night",
       "difficulties to get in": "Medium",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "OST Club",
@@ -242,10 +195,7 @@
       "price": "15 - 25 euros",
       "best clubbing times": "Saturday night",
       "difficulties to get in": "Easy",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     },
     {
       "name": "Suicide Club",
@@ -255,10 +205,7 @@
       "price": "18 - 22 euros",
       "best clubbing times": "Saturday night",
       "difficulties to get in": "Easy",
-      "comments": [],
-      "rate": 0.0,
-      "reviews": 0,
-      "commentaries": []
+      "reviews": []
     }
   ]
 }

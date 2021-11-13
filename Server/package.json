@@ -12,6 +12,10 @@
     "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "prettier": "^2.4.1"
   }
 }

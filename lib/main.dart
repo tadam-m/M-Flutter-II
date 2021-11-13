@@ -37,14 +37,6 @@ class Routing extends StatelessWidget {
           name: vueListClub,
           page: () => const VueClubListScreen(),
         ),
-        // GetPage<LoginScreen>(
-        //   name: loginRoute,
-        //   page: () => LoginScreen(),
-        // ),
-        // GetPage<RegisterScreen>(
-        //   name: registerRoute,
-        //   page: () => RegisterScreen(),
-        // ),
       ],
     );
   }
