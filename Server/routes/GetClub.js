@@ -45,7 +45,6 @@ function getClub(req)
     if (tmp == undefined || global.UsersList.get(username) == undefined)
         return {status: 401, body: {message: "Bad request"}};
     return {status: 200, body: tmp};
-
-
 }
+
 module.exports = router;
