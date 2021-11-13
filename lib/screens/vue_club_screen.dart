@@ -125,9 +125,24 @@ class VueClubScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 20),
-                Text(
-                  "Reviews",
-                  style: Theme.of(context).textTheme.bodyText1,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Reviews",
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ),
+                    IconButton(
+                        onPressed: () async {
+                          final review = await showReviewForm(context);
+                          if (review == null) {
+                            return;
+                          }
+                          // TODO: Send review to Server
+                          print(review);
+                        },
+                        icon: const Icon(Icons.add))
+                  ],
                 ),
                 const SizedBox(height: 20),
                 if (club.reviews.isEmpty)
