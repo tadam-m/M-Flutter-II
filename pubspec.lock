@@ -476,7 +476,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "766f69d4015a76eae3321dc6d21e0844c566cc9e"
+      resolved-ref: cf1e9b0023013a605281dc1f99b33ec37900d324
       url: "https://github.com/Ersikan/flutter-review.git"
     source: git
     version: "0.0.1"
