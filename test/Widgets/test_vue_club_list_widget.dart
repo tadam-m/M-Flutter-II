@@ -30,7 +30,7 @@ Future<List<Club>> buildTestableListView() async {
       (jsonClub) => Club(
         camera: false,
         rating: 0.0,
-        reviews: jsonClub["reviews"],
+        reviews: [],
         clubbingTime: jsonClub["best clubbing times"],
         description: jsonClub["description"],
         entrance: _translateEntrance(jsonClub["difficulties to get in"]),
