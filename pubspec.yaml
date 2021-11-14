@@ -39,6 +39,7 @@ dependencies:
   get_storage: ^2.0.3
   audioplayers: ^0.20.1
   google_fonts: ^2.1.0
+  flutter_offline: "^2.0.0"
 
   review:
     git:
