@@ -28,6 +28,7 @@ Future<List<Club>> buildTestableListView() async {
     jsonData['clubs'].map(
       (jsonClub) => Club(
         camera: false,
+        rating: 0.0,
         reviews: jsonClub["reviews"],
         clubbingTime: jsonClub["best clubbing times"],
         description: jsonClub["description"],
