@@ -8,15 +8,7 @@
         "price": "15 - 20 euros",
         "best clubbing times": "friday to monday, if you have the luck to get in",
         "difficulties to get in": "Very hard",
-        "reviews": [
-          {
-            "uuid": "bulshit",  
-            "reviewerName": "Bob",
-            "reviewContent": "Never got in",
-            "mark": 0,
-            "date": "2021-11-01T02:27:12Z"
-          }
-        ]
+        "reviews": []
       },
       {
         "name": "Anomalie Art Club",
