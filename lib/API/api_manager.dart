@@ -27,9 +27,7 @@ class ApiManager {
   final String baseUrl = dotenv.env["API_URL"] ??
       "https://gehensiezumclub.herokuapp.com/api/gehenSiezumClub";
   final http.Client client;
-  ApiManager({required this.client}) {
-    print(baseUrl);
-  }
+  ApiManager({required this.client});
 
   Future<User> loginUser(String username, String password) async {
     await _handleServerDown(

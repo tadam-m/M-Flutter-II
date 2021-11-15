@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:review/review.dart';
+import 'package:techno_clubs_berlin/bloc/bloc_provider.dart';
+import 'package:techno_clubs_berlin/bloc/selected_club.dart';
 import 'package:techno_clubs_berlin/components/display_entrance.dart';
 
 import 'package:techno_clubs_berlin/models/club.dart';
@@ -13,16 +15,20 @@ class ClubCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final selectedClubBloc = BlocProvider.of<SelectedClubBloc>(context);
+
     return Card(
       elevation: 5,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: InkWell(
           splashColor: Colors.green,
-          onTap: () => Get.to(
-            () => const VueClubScreen(),
-            arguments: {"club": club},
-          ),
+          onTap: () {
+            Get.to(
+              () => const VueClubScreen(),
+            );
+            selectedClubBloc.setSelection(club.name);
+          },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
