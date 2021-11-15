@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:techno_clubs_berlin/constants/routes.dart';
 import 'package:techno_clubs_berlin/screens/auth/login_screen.dart';
@@ -10,7 +11,8 @@ import 'package:techno_clubs_berlin/screens/splash_screen.dart';
 import 'package:techno_clubs_berlin/screens/vue_club_list_screen.dart';
 import 'package:techno_clubs_berlin/themes/themes.dart';
 
-void main() {
+void main() async {
+  await dotenv.load(fileName: ".env");
   runApp(const Routing());
 }
 
