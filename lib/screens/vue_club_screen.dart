@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:review/review.dart';
+import 'package:techno_clubs_berlin/components/add_review_button.dart';
 import 'package:techno_clubs_berlin/components/display_entrance.dart';
 
 import 'package:techno_clubs_berlin/models/club.dart';
@@ -125,9 +126,17 @@ class VueClubScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 20),
-                Text(
-                  "Reviews",
-                  style: Theme.of(context).textTheme.bodyText1,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Reviews",
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ),
+                    AddReviewButton(
+                      club: club,
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 20),
                 if (club.reviews.isEmpty)
