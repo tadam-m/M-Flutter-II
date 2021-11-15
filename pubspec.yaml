@@ -45,6 +45,11 @@ dependencies:
       url: https://github.com/Ersikan/flutter-review.git
       ref: main
 
+  flutter_offline:
+    git:
+      url: https://github.com/lscbot/flutter_offline.git
+      ref: connectivity_plus
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -65,6 +70,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/
+    - test/test_resources/
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

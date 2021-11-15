@@ -1,0 +1,205 @@
+{
+    "clubs": [
+      {
+        "name": "Berghain",
+        "description": "Easily the city’s most famous club – and some would say the world’s best – Berghain is not just for world-class techno: it’s a way of life for many of the tireless regulars who call it a ‘church’. It’s open, complete with dark rooms, from Friday midnight until well into Monday morning. The club’s reputation for a difficult and random door policy is not entirely undeserved: doorman Sven (recognisable by his facial tattoos) looms large all night with a seemingly haphazard attitude to who gets in.",
+        "location": "Am Wriezener bhf, 10243",
+        "camera": false,
+        "price": "15 - 20 euros",
+        "best clubbing times": "friday to monday, if you have the luck to get in",
+        "difficulties to get in": "Very hard",
+        "reviews": []
+      },
+      {
+        "name": "Anomalie Art Club",
+        "description": "Come for the clubbing, and stay for the art: Anomalie Art Club is home to some of the most spectacular visual design on Berlin’s club scene. Anomalie also hosts film screenings, art exhibitions and open-air raves.",
+        "location": "Storkower Str. 123, 10407",
+        "camera": false,
+        "price": "20 - 25 euros",
+        "best clubbing times": "Friday",
+        "difficulties to get in": "Medium",
+        "reviews": []
+      },
+      {
+        "name": "://about blank",
+        "description": "Particularly famed for its open-air parties, this club near Ostkreuz station is a favourite with the city’s more adventurous hedonists.",
+        "location": "Markgrafendamm 24c, 10245",
+        "camera": false,
+        "price": "15 - 18 euros",
+        "best clubbing times": "Sunday morning",
+        "difficulties to get in": "Hard",
+        "reviews": []
+      },
+      {
+        "name": "Loophole Berlin",
+        "description": "Decadent and trashy in equal measures, this ruin-esque former brothel attracts both glitter punks and health goths, who sway to experimental electronic music, down cheap beers and soak up the laid-back vibes.",
+        "location": "Boddinstraße 60, 12053",
+        "camera": false,
+        "price": "10 - 15 euros",
+        "best clubbing times": "Sunday night",
+        "difficulties to get in": "Easy",
+        "reviews": []
+      },
+      {
+        "name": "Kater Blau",
+        "description": "With a moored boat, a roaring fire at night and many hammock-like features, the potential for alfresco relaxing is high. Meanwhile, a fine roster of electronic DJs spin away unendingly – sometimes for four days straight.",
+        "location": "Holzmarktstraße 25, 10243",
+        "camera": false,
+        "price": "15 - 18 euros",
+        "best clubbing times": "Sunday night",
+        "difficulties to get in": "Medium",
+        "reviews": []
+      },
+      {
+        "name": "KitKat",
+        "description": "This legendary sex and techno club for all is a labyrinthine complex of half a dozen dancefloors, a dubious swimming pool and a grimy mock-operating room.",
+        "location": "Köpenicker Straße 76, Brückenstraße 1, 10179",
+        "camera": false,
+        "price": "20 - 23 euros",
+        "best clubbing times": "Friday to the middle of saturday",
+        "difficulties to get in": "Very hard",
+        "reviews": []
+      },
+      {
+        "name": "Süss War Gestern",
+        "description": "With a name meaning ‘yesterday was sweet’, the 1970s-style décor comes as no surprise. What is a surprise is the free entrance and cheap beers.",
+        "location": "Wühlischstraße 43, 10245",
+        "camera": true,
+        "price": "0 euros",
+        "best clubbing times": "All weekend",
+        "difficulties to get in": "easy",
+        "reviews": []
+      },
+      {
+        "name": "Clud der Visionaere",
+        "description": "One of the first and best, this summer-only canal-side club is nestled under an enormous weeping willow. There’s a small indoor dance floor and a rickety open-air wood-deck terrace with a large jetty stretching out across the water.",
+        "location": "Am Flutgraben, 12435",
+        "camera": false,
+        "price": "15 - 18 euros",
+        "best clubbing times": "Sunday around 6am",
+        "difficulties to get in": "hard",
+        "reviews": []
+      },
+      {
+        "name": "Ritter Butzke",
+        "description": "This enormous old factory has become a party hotspot thanks to its imaginative décor and reliable booking policy; events include the hedonistic GMF party series and other techno-centric offerings.",
+        "location": "Ritterstraße 24-27, 10969",
+        "camera": false,
+        "price": "20 - 23 euros",
+        "best clubbing times": "Saturday night",
+        "difficulties to get in": "hard",
+        "reviews": []
+      },
+      {
+        "name": "Watergate",
+        "description": "The downstairs Water Floor is particularly impressive, with its panorama windows looking directly on to the Spree, and a floating deck terrace for watching the sunrise over Kreuzberg.",
+        "location": "Falckensteinstraße 49, 10997",
+        "camera": true,
+        "price": "20 - 23 euros",
+        "best clubbing times": "Saturday night",
+        "difficulties to get in": "Medium",
+        "reviews": []
+      },
+      {
+        "name": "Golden Gate",
+        "description": "Once home to a rather hit-and-miss music policy, with the occasional live show, this grimy little club has now settled firmly into a series of all-weekend techno parties. Its location – smack bang in the middle of a motorway – means it has no issue with noise.",
+        "location": "Schicklerstraße 4, 10179",
+        "camera": true,
+        "price": "16 - 18 euros",
+        "best clubbing times": "Friday night",
+        "difficulties to get in": "Medium",
+        "reviews": []
+      },
+      {
+        "name": "YAAM",
+        "description": "Yet another victim of Berlin’s Mediaspree development, YAAM was forcibly evicted from its previous home – but you can’t keep a good reggae club down.",
+        "location": "An d. Schillingbrücke 3, 10243",
+        "camera": true,
+        "price": "10 - 12 euros",
+        "best clubbing times": "Friday night",
+        "difficulties to get in": "Medium",
+        "reviews": []
+      },
+      {
+        "name": "SchwuZ",
+        "description": "One of Berlin’s longest-running dance institutions, SchwuZ moved into the old Kindl brewery in 2013. A variety of mainstream and more underground events take place throughout the week, attracting a mixed and ready-to-mingle crowd who take full advantage of the warehouse.",
+        "location": "Rollbergstraße 26, 12053",
+        "camera": false,
+        "price": "17 - 20 euros",
+        "best clubbing times": "Sunday morning",
+        "difficulties to get in": "Hard",
+        "reviews": []
+      },
+      {
+        "name": "Sisyphos",
+        "description": "You don’t make the trek out to Sisyphos just for a snoop and a couple of beers. It’s an ‘in for a penny, in for a pound’ sort of place, where the party begins on Friday and trundles on non-stop until Monday. Vast indoor and outdoor spaces at this former dog biscuit factory help create a festival-like atmosphere that’s pitch-perfect for sunny weekends.",
+        "location": "Hauptstraße 15, 10317",
+        "camera": false,
+        "price": "15 - 25 euros",
+        "best clubbing times": "Saturday night",
+        "difficulties to get in": "Medium",
+        "reviews": []
+      },
+      {
+        "name": "Clärchens Ballhaus",
+        "description": "For a taste of Berlin nightlife from a different era, head to this wonderfully original dance hall located in the middle of Mitte’s smart gallery district. In operation since 1913, it’s had its fair share of ups and downs, but one thing has stayed constant – the familiar tappety-tap of a ballroom quick step or foxtrot.",
+        "location": "Auguststraße 24/25, 10117",
+        "camera": true,
+        "price": "8 - 12 euros",
+        "best clubbing times": "Friday night",
+        "difficulties to get in": "Easy",
+        "reviews": []
+      },
+      {
+        "name": "Salon Zur Wilden Renate",
+        "description": "This knackered old house was perennially at risk of being torn down and turned into – of course – trendy apartments. Once-sporadic parties follow a regular weekend rhythm these days, usually running till the last man stands.",
+        "location": "Alt-Stralau 70, 10245",
+        "camera": false,
+        "price": "15 - 20 euros",
+        "best clubbing times": "Sunday morning",
+        "difficulties to get in": "Hard",
+        "reviews": []
+      },
+      {
+        "name": "Prince Charles",
+        "description": "Walking down the concrete underpass to the entrance, it feels more like the approach to a car park than a trendy club. The Prince Charles is situated in a former swimming pool, and the tiled walls and soft lighting create an intimate atmosphere.",
+        "location": "Prinzenstraße 85F, 10969",
+        "camera": false,
+        "price": "25 - 30 euros",
+        "best clubbing times": "Sunday night",
+        "difficulties to get in": "Medium",
+        "reviews": []
+      },
+      {
+        "name": "Tresor",
+        "description": "The new incarnation of an old techno institution, Tresor Club is set in an abandoned power plant spanning 22,000m² on Köpenicker Straße in Berlin's Mitte neighbourhood - a labyrinth of concrete passages mazing into basement vaults and industrial halls.",
+        "location": "Köpenicker Str. 70, 10179",
+        "camera": false,
+        "price": "15 - 20 euros",
+        "best clubbing times": "Saturday night",
+        "difficulties to get in": "Medium",
+        "reviews": []
+      },
+      {
+        "name": "OST Club",
+        "description": "Club OST, nestled between Osthafen and Ostkreuz, consciously focuses on musical gems with warm sounds from Berlin and the celestial planes. The queue is long, be patient.",
+        "location": "Alt-Stralau 1-2, 10245",
+        "camera": true,
+        "price": "15 - 25 euros",
+        "best clubbing times": "Saturday night",
+        "difficulties to get in": "Easy",
+        "reviews": []
+      },
+      {
+        "name": "Suicide Club",
+        "description": "The Suicide Circus is a midsize techno club in Friedrichshain, Berlin. With an indoor and open air floor we host electronic music in town.",
+        "location": "Warschauer Brücke, Revaler Straße 99 Zugang über, 10245",
+        "camera": false,
+        "price": "18 - 22 euros",
+        "best clubbing times": "Saturday night",
+        "difficulties to get in": "Easy",
+        "reviews": []
+      }
+    ]
+  }
+  
