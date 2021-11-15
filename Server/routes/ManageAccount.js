@@ -28,11 +28,11 @@ function register(req) {
   if (username == undefined || password == undefined)
     return { status: 403, body: { message: "username or password is empty" } };
   if (global.UsersList.get(username) != undefined)
-    return { status: 401, body: { message: "This user already exist" } };
+    return { status: 401, body: { message: "This user already exists" } };
   global.UsersList.set(username, password);
   return {
     status: 200,
-    body: { message: "User " + username + " well created", username: username },
+    body: { message: "User " + username + " created", username: username },
   };
 }
 
@@ -41,7 +41,7 @@ function login(req) {
   var password = req.body.password;
 
   if (username == undefined || password == undefined)
-    return { status: 403, body: { message: "This user already exist" } };
+    return { status: 403, body: { message: "This user already exists" } };
   if (global.UsersList.get(username) == password)
     return {
       status: 200,
