@@ -23,8 +23,7 @@ Entrance _translateEntrance(String entrance) {
 }
 
 class ApiManager {
-  static String baseUrl =
-      'https://gehensiezumclub.herokuapp.com/api/gehenSiezumClub';
+  static String baseUrl = 'http://10.0.2.2:4000/api/gehenSiezumClub';
   final http.Client client;
   ApiManager({required this.client});
 
@@ -62,6 +61,21 @@ class ApiManager {
       ),
     );
     return User(name: username, password: password);
+  }
+
+  Future<void> addReview(Review review, String clubName) async {
+    await _handleServerDown(
+        () => client.post(Uri.parse(baseUrl + "/Clubs/PostReview"),
+            headers: <String, String>{
+              'Content-Type': 'application/json; charset=UTF-8',
+            },
+            body: jsonEncode(<String, dynamic>{
+              'reviewerName': review.reviewerName,
+              'reviewContent': review.reviewContent,
+              'mark': review.mark,
+              'date': review.date.toIso8601String(),
+              'club': clubName
+            })));
   }
 
   Future<List<Club>> getClubs() async {

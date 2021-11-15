@@ -82,8 +82,8 @@ function PostReview(req) {
       body: { message: { message: "Username, club or review is undefined" } },
     };
   var tmp = global.ClubList.get(club);
-  if (tmp == undefined || global.UsersList.get(username) == undefined)
-    return { status: 401, body: { message: { message: "Bad request" } } };
+  if (tmp == undefined)
+    return { status: 401, body: { message: { message: "Unknown club" } } };
   global.ClubList.get(club).reviews.push({
     uuid: uuid.v1(),
     reviewerName: username,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:review/review.dart';
+import 'package:techno_clubs_berlin/components/add_review_button.dart';
 import 'package:techno_clubs_berlin/components/display_entrance.dart';
 
 import 'package:techno_clubs_berlin/models/club.dart';
@@ -132,16 +133,9 @@ class VueClubScreen extends StatelessWidget {
                       "Reviews",
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
-                    IconButton(
-                        onPressed: () async {
-                          final review = await showReviewForm(context);
-                          if (review == null) {
-                            return;
-                          }
-                          // TODO: Send review to Server
-                          print(review);
-                        },
-                        icon: const Icon(Icons.add))
+                    AddReviewButton(
+                      club: club,
+                    ),
                   ],
                 ),
                 const SizedBox(height: 20),
