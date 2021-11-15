@@ -45,6 +45,11 @@ dependencies:
       url: https://github.com/Ersikan/flutter-review.git
       ref: main
 
+  flutter_offline:
+    git:
+      url: https://github.com/lscbot/flutter_offline.git
+      ref: connectivity_plus
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
