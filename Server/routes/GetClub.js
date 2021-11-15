@@ -22,7 +22,7 @@ router.get("/getClub", function (req, res, next) {
 });
 
 function getList(req) {
-  return { status: 200, body: global.ClubList };
+  return { status: 200, body: Array.from(global.ClubList.values()) };
 }
 
 function getClub(req) {
