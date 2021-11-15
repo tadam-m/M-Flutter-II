@@ -39,12 +39,16 @@ dependencies:
   get_storage: ^2.0.3
   audioplayers: ^0.20.1
   google_fonts: ^2.1.0
-  flutter_offline: "^2.0.0"
 
   review:
     git:
       url: https://github.com/Ersikan/flutter-review.git
       ref: main
+
+  flutter_offline:
+    git:
+      url: https://github.com/lscbot/flutter_offline.git
+      ref: connectivity_plus
 
 dev_dependencies:
   flutter_test:
