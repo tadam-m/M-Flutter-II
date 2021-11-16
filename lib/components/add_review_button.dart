@@ -3,6 +3,9 @@ import 'package:flutter/widgets.dart';
 import 'package:review/review.dart';
 import 'package:techno_clubs_berlin/API/api_manager.dart';
 import 'package:http/http.dart' as http;
+import 'package:techno_clubs_berlin/bloc/bloc_provider.dart';
+import 'package:techno_clubs_berlin/bloc/club_list.dart';
+import 'package:techno_clubs_berlin/bloc/selected_club.dart';
 import 'package:techno_clubs_berlin/models/club.dart';
 
 class AddReviewButton extends StatefulWidget {
@@ -18,6 +21,8 @@ class _AddReviewButtonState extends State<AddReviewButton> {
 
   @override
   Widget build(BuildContext context) {
+    final clubList = BlocProvider.of<ClubListBloc>(context);
+    final selected = BlocProvider.of<SelectedClubBloc>(context);
     return IconButton(
         onPressed: () async {
           final review = await showReviewForm(context);
@@ -25,6 +30,8 @@ class _AddReviewButtonState extends State<AddReviewButton> {
             return;
           }
           _apiProvider.addReview(review, widget.club.name);
+          clubList.refresh();
+          selected.update();
         },
         icon: const Icon(Icons.add));
   }
