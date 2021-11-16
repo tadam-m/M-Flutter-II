@@ -12,7 +12,7 @@ import 'test_authentication_mock.mocks.dart';
 
 @GenerateMocks([http.Client])
 void authUnitTest() {
-  const baseUrl = 'https://gehensiezumclub.herokuapp.com/api/gehenSiezumClub';
+  const baseUrl = 'http://10.0.2.2:4000/api/gehenSiezumClub';
 
   group('Test Authentication Request', () {
     group('Register Test', () {

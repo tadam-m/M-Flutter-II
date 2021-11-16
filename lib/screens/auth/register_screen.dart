@@ -28,57 +28,46 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
-          : LayoutBuilder(
-              builder:
-                  (BuildContext context, BoxConstraints viewportConstraints) =>
-                      SingleChildScrollView(
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    minHeight: viewportConstraints.maxHeight,
-                  ),
-                  child: IntrinsicHeight(
-                    child: Column(
-                      children: <Widget>[
-                        Expanded(
-                          flex: 2,
-                          child: Container(
-                            alignment: Alignment.center,
-                            child: const Text(
-                              'Register\nto\nGehen Sie zum Club',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(fontSize: 35.0),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          flex: 2,
-                          child: Container(
-                              alignment: Alignment.center,
-                              child: RegisterForm(
-                                emailController: _emailController,
-                                passwordController: _passwordController,
-                                usernameController: _usernameController,
-                                formKey: _formKey,
-                              )),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: Container(
-                              alignment: Alignment.center,
-                              child: RegisterNavigation(
-                                  usernameController: _usernameController,
-                                  passwordController: _passwordController,
-                                  emailController: _emailController,
-                                  formKey: _formKey,
-                                  changeLoadingState: changeLoadingState)),
-                        ),
-                      ],
+          : Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: const Text(
+                      'Register\nto\nGehen Sie zum Club',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 35.0),
                     ),
                   ),
                 ),
-              ),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                      alignment: Alignment.center,
+                      child: RegisterForm(
+                        emailController: _emailController,
+                        passwordController: _passwordController,
+                        usernameController: _usernameController,
+                        formKey: _formKey,
+                      )),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                      alignment: Alignment.center,
+                      child: RegisterNavigation(
+                          usernameController: _usernameController,
+                          passwordController: _passwordController,
+                          emailController: _emailController,
+                          formKey: _formKey,
+                          changeLoadingState: changeLoadingState)),
+                ),
+              ],
             ),
     );
   }

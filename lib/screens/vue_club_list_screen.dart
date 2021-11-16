@@ -23,7 +23,7 @@ class VueClubListScreen extends StatelessWidget {
               final results = snapshot.data;
               if (results == null || results.isEmpty) {
                 bloc.refresh();
-                return const Text("No clubs");
+                return const Center(child: CircularProgressIndicator());
               }
               return ListView(
                 children: results.map((club) => ClubCard(club)).toList(),
