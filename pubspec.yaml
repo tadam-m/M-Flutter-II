@@ -49,6 +49,7 @@ dependencies:
     git:
       url: https://github.com/lscbot/flutter_offline.git
       ref: connectivity_plus
+  animations: ^2.0.2
 
 dev_dependencies:
   flutter_test:

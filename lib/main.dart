@@ -15,7 +15,7 @@ import 'package:techno_clubs_berlin/screens/splash_screen.dart';
 import 'package:techno_clubs_berlin/screens/vue_club_list_screen.dart';
 import 'package:techno_clubs_berlin/themes/themes.dart';
 
-void main() async {
+void main() {
   runApp(const MainApplicationState());
 }
 
