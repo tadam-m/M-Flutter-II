@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:techno_clubs_berlin/API/api_manager.dart';
@@ -16,8 +15,7 @@ import 'package:techno_clubs_berlin/screens/splash_screen.dart';
 import 'package:techno_clubs_berlin/screens/vue_club_list_screen.dart';
 import 'package:techno_clubs_berlin/themes/themes.dart';
 
-void main() async {
-  await dotenv.load(fileName: ".env");
+void main() {
   runApp(const MainApplicationState());
 }
 

@@ -25,56 +25,44 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
-          : LayoutBuilder(
-              builder:
-                  (BuildContext context, BoxConstraints viewportConstraints) {
-                return SingleChildScrollView(
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                      minHeight: viewportConstraints.maxHeight,
-                    ),
-                    child: IntrinsicHeight(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Expanded(
-                            flex: 2,
-                            child: Container(
-                              alignment: Alignment.center,
-                              child: const Text(
-                                'Already an Account ?',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 35.0),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: Container(
-                                alignment: Alignment.center,
-                                child: LoginForm(
-                                    emailController: _emailController,
-                                    passwordController: _passwordController,
-                                    formKey: _formKey)),
-                          ),
-                          Expanded(
-                            flex: 1,
-                            child: Container(
-                                alignment: Alignment.center,
-                                child: LoginNavigation(
-                                    emailController: _emailController,
-                                    passwordController: _passwordController,
-                                    formKey: _formKey,
-                                    changeLoadingState: changeLoadingState)),
-                          )
-                        ],
-                      ),
+          : Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: const Text(
+                      'Already an Account ?',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 35.0),
                     ),
                   ),
-                );
-              },
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                      alignment: Alignment.center,
+                      child: LoginForm(
+                          emailController: _emailController,
+                          passwordController: _passwordController,
+                          formKey: _formKey)),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                      alignment: Alignment.center,
+                      child: LoginNavigation(
+                          emailController: _emailController,
+                          passwordController: _passwordController,
+                          formKey: _formKey,
+                          changeLoadingState: changeLoadingState)),
+                )
+              ],
             ),
     );
   }

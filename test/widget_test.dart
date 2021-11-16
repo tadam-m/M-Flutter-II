@@ -1,9 +1,12 @@
+import 'package:get/get.dart';
+
 import 'Unit_tests/test_authentification_mock.dart';
 import 'Unit_tests/test_vue_club_list_mock.dart';
 import 'Widgets/test_authentication_widget.dart';
 import 'Widgets/test_vue_club_list_widget.dart';
 
 void main() {
+  Get.testMode = true;
   /*** Units Testing ***/
 
   // Test Authentication Requests with Unit tests
