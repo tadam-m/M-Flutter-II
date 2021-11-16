@@ -23,8 +23,7 @@ Entrance _translateEntrance(String entrance) {
 }
 
 class ApiManager {
-  static String baseUrl =
-      'https://gehensiezumclub.herokuapp.com/api/gehenSiezumClub';
+  static String baseUrl = 'http://10.0.2.2:4000/api/gehenSiezumClub';
   final http.Client client;
   ApiManager({required this.client});
 
