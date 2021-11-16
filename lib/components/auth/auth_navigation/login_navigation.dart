@@ -59,6 +59,7 @@ class _LoginNavigationState extends State<LoginNavigation> {
           child: const Text('Login'),
         ),
         ElevatedButton(
+          key: const Key('goToRegister'),
           onPressed: () => Get.offNamed(registerRoute),
           child: const Text('No account ? Go to register'),
         ),

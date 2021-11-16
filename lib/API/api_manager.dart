@@ -1,4 +1,3 @@
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:review/review.dart';
@@ -24,8 +23,7 @@ Entrance _translateEntrance(String entrance) {
 }
 
 class ApiManager {
-  final String baseUrl = dotenv.env["API_URL"] ??
-      "https://gehensiezumclub.herokuapp.com/api/gehenSiezumClub";
+  final String baseUrl = "http://10.0.2.2:4000/api/gehenSiezumClub";
   final http.Client client;
   ApiManager({required this.client});
 

@@ -1,9 +1,14 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:techno_clubs_berlin/API/api_manager.dart';
+import 'package:techno_clubs_berlin/bloc/bloc_provider.dart';
+import 'package:techno_clubs_berlin/bloc/club_list.dart';
+import 'package:techno_clubs_berlin/bloc/selected_club.dart';
 import 'package:techno_clubs_berlin/components/club_card.dart';
 import 'package:techno_clubs_berlin/models/club.dart';
 
@@ -55,12 +60,21 @@ testListClubWidget() {
 
   testWidgets('testing List View display first elements',
       (WidgetTester tester) async {
+    final _clubListBloc = ClubListBloc(ApiManager(client: http.Client()));
+    final _selectedClubBloc = SelectedClubBloc();
     clubs = await buildTestableListView();
-
     await tester.pumpWidget(MaterialApp(
+        home: BlocProvider(
+            bloc: _clubListBloc,
+            child: BlocProvider(
+                bloc: _selectedClubBloc,
+                child: ListView(
+                  children: clubs.map((club) => ClubCard(club)).toList(),
+                )))));
+    /*await tester.pumpWidget(MaterialApp(
         home: ListView(
       children: clubs.map((club) => ClubCard(club)).toList(),
-    )));
+    )));*/
 
     final firstClubFinder = find.text("Berghain");
     final secondClubFinder = find.text("Anomalie Art Club");
@@ -74,10 +88,16 @@ testListClubWidget() {
   });
 
   testWidgets('should scroll the list club item', (WidgetTester tester) async {
+    final _clubListBloc = ClubListBloc(ApiManager(client: http.Client()));
+    final _selectedClubBloc = SelectedClubBloc();
     await tester.pumpWidget(MaterialApp(
-        home: ListView(
-      children: clubs.map((club) => ClubCard(club)).toList(),
-    )));
+        home: BlocProvider(
+            bloc: _clubListBloc,
+            child: BlocProvider(
+                bloc: _selectedClubBloc,
+                child: ListView(
+                  children: clubs.map((club) => ClubCard(club)).toList(),
+                )))));
 
     final firstClubFinder = find.text("Berghain");
     expect(firstClubFinder, findsOneWidget);
