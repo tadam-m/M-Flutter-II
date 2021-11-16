@@ -45,10 +45,6 @@ class _LoginNavigationState extends State<LoginNavigation> {
     return Column(
       children: <Widget>[
         ElevatedButton(
-          onPressed: () => Get.toNamed(vueListClub),
-          child: const Text('Bypass login'),
-        ),
-        ElevatedButton(
           key: const Key('login'),
           onPressed: () {
             if (widget.formKey.currentState!.validate()) {
