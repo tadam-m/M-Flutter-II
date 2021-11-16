@@ -39,7 +39,6 @@ dependencies:
   get_storage: ^2.0.3
   audioplayers: ^0.20.1
   google_fonts: ^2.1.0
-  flutter_dotenv: ^5.0.2
 
   review:
     git:
@@ -73,7 +72,6 @@ flutter:
   assets:
     - assets/
     - test/test_resources/
-    - .env
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
