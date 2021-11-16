@@ -7,12 +7,14 @@ var ManageReview = require("./routes/ManageReviews");
 var ReadClubFile = require("./data/OpenClubList");
 var port = process.env.PORT || 4000;
 var http = require("http");
+var cors = require('cors');
 
 global.ClubList = [];
 global.UsersList = new Map();
 global.ClubList = ReadClubFile.ReadClubFile();
 
 var app = express();
+app.use(cors());
 app.set("port", port);
 var server = http.createServer(app);
 server.listen(port);
